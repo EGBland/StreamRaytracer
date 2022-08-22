@@ -10,3 +10,10 @@ The project as of Stream 1, 10th August 2022.
 The project as of Stream 2, 14th August 2022.
 * Hittable class added, along with Spheres.
 * Program now draws two spheres, coloured according to their normals.
+
+## 0.3.0.0 -- 2022-08-22
+The project as of Stream 3, 22nd August 2022.
+* Multisampling antialiasing now added.
+** Default rendering resolution lowered to 400x300 for speed.
+* Material class added, with a Diffuse material option.
+* Rays now bounce recursively off objects, and attenuate their colour depending on the object's material.
