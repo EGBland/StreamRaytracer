@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-name-shadowing #-}
+
 module Vector3 (
     Vec3(..), Ray3(..),
     (£+), (£-), (£*), (£**), (£.), (££), mag, normalise,

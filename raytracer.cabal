@@ -1,36 +1,24 @@
-cabal-version:      2.4
+cabal-version:      3.0
 name:               raytracer
-version:            0.3.0.0
-
--- A short (one-line) description of the package.
+version:            0.3.1.0
 -- synopsis:
-
--- A longer description of the package.
 -- description:
-
--- A URL where users can report bugs.
--- bug-reports:
-
--- The license under which the package is released.
--- license:
+homepage:           https://flompy.zone/codingfen/projects/raytracer
+license:            MIT
+license-file:       LICENSE
 author:             E. G. Bland
 maintainer:         liz@flompy.zone
-
--- A copyright notice.
 -- copyright:
--- category:
-extra-source-files: CHANGELOG.md
+category:           Graphics
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
 
 executable raytracer
+    ghc-options: -static -O2 -Wall
     main-is:          Main.hs
-
-    -- Modules included in this executable, other than Main.
-    -- other-modules:
-    other-modules: Raylude, Vector3, World, Material
-
-    -- LANGUAGE extensions used by modules in this package.
+    other-modules:    Raylude, Vector3, World, Material
     -- other-extensions:
     build-depends:    base ^>=4.14.3.0, JuicyPixels, random
     hs-source-dirs:   app
     default-language: Haskell2010
-    ghc-options: -static -O2

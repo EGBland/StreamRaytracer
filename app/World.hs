@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# OPTIONS_GHC -Wno-unused-top-binds #-}
 {-# HLINT ignore "Use newtype instead of data" #-}
 {-# LANGUAGE ExistentialQuantification #-}
 module World (
@@ -25,7 +26,7 @@ data Sphere = Sphere Material Point VecType
 
 
 instance Hittable Sphere where
-    hits g ray@(Ray3 origin direction) sph@(Sphere mat centre radius) = -- TODO rewrite this, it's fucking awful!!!!
+    hits g ray@(Ray3 origin direction) (Sphere mat centre radius) = -- TODO rewrite this, it's fucking awful!!!!
         let
             a = direction £. direction
             b = 2*(direction £. (origin £- centre))
@@ -38,7 +39,7 @@ instance Hittable Sphere where
         in
             case scatter of
                 Nothing -> Nothing
-                Just (scatterDir,g2) -> Just (fromJust hitPoint,scatterDir,colour,g)
+                Just (scatterDir,g2) -> Just (fromJust hitPoint,scatterDir,colour,g2)
     
     p `normal` (Sphere _ centre _) = normalise $ p £- centre
 

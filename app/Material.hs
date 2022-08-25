@@ -31,7 +31,7 @@ data Diffuse = Diffuse Colour
 
 instance MaterialT Diffuse where
     attenuate (Diffuse clr) = clr
-    bounce (Diffuse clr) g normal =
+    bounce (Diffuse _) g normal =
         let
             (offset,g2) = BiF.first (0.999£**) $ randomUnit g
         in
